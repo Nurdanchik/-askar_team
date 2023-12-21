@@ -3,6 +3,6 @@ Install django.
 Starting project should be like this:
 in the terminal pip install django.
 python3 -m venv venv
-soutce venv/bin/activate
+source venv/bin/activate
 python3 manage.py runserver
 That's all, thanks for using my project!
