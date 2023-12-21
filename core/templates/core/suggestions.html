@@ -1,0 +1,56 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Suggestions{% endblock %}
+
+{% block content %}
+    <style>
+        .suggestions-container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .suggestion {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+        }
+
+        .no-suggestions {
+            text-align: center;
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+
+    <div class="suggestions-container">
+        <h1>Suggestions:</h1>
+
+        {% if suggestions %}
+            {% for suggestion in suggestions %}
+                <div class="suggestion">
+                    <h2>{{ suggestion.subject }}</h2>
+                    <p>Name: {{ suggestion.name }}</p>
+                    <p>Email: {{ suggestion.email }}</p>
+                    <p>Message: {{ suggestion.message }}</p>
+                    <p>Created At: {{ suggestion.created_at }}</p>
+                </div>
+                <hr>
+            {% endfor %}
+        {% else %}
+            <p class="no-suggestions">No suggestions available.</p>
+        {% endif %}
+    </div>
+{% endblock %}

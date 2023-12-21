@@ -1,0 +1,87 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Связаться с нами{% endblock %}
+
+{% block content %}
+<section class="container mx-auto py-16" id="contact">
+    <div class="contact-container flex flex-wrap">
+        <div class="w-full lg:w-1/2">
+            <div class="main-title mb-8">
+                <h2 class="text-4xl font-bold">Contact <span class="text-teal-500">Us</span></h2>
+            </div>
+            <div class="contact-info mb-8">
+                <div class="contact-item flex items-center mb-4">
+                    <div class="icon bg-teal-500 text-white p-2 rounded-full mr-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p class="text-gray-700">Bishkek, Kyrgyzstan</p>
+                </div>
+                <div class="contact-item flex items-center mb-4">
+                    <div class="icon bg-teal-500 text-white p-2 rounded-full mr-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p class="text-gray-700">kondubaev2006@mail.ru</p>
+                </div>
+                <div class="contact-item flex items-center mb-4">
+                    <div class="icon bg-teal-500 text-white p-2 rounded-full mr-4">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <p class="text-gray-700">AIU, Kyrgyzstan, Bishkek</p>
+                </div>
+                <div class="contact-item flex items-center mb-4">
+                    <div class="icon bg-teal-500 text-white p-2 rounded-full mr-4">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <p class="text-gray-700">+996 551510558</p>
+                </div>
+                <div class="contact-item flex items-center mb-4">
+                    <div class="icon bg-teal-500 text-white p-2 rounded-full mr-4">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <p class="text-gray-700">Russian, English, Turkish (a little bit)</p>
+                </div>
+            </div>
+            <div class="contact-icons">
+                <div class="contact-icon">
+                    <a href="https://github.com/Nurdanchik" target="_blank" class="text-teal-500 hover:text-teal-700">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="w-full lg:w-1/2">
+            <form action="{% url 'core:contact_view' %}" method="POST" class="contact-form">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <input type="text" name="name" required placeholder="Your Name"
+                        class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-teal-500">
+                </div>
+                <div class="mb-4">
+                    <input type="email" name="email" required placeholder="Your Email"
+                        class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-teal-500">
+                </div>
+                <div class="mb-4">
+                    <input type="text" name="subject" required placeholder="Enter Subject"
+                        class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-teal-500">
+                </div>
+                <div class="mb-4">
+                    <textarea name="message" cols="15" rows="8" placeholder="Message Here..." required
+                        class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-teal-500"></textarea>
+                </div>
+                <div class="submit-btn">
+                    <button type="submit" class="bg-teal-500 text-white px-6 py-2 rounded hover:bg-teal-700">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+
+
+
+
+
+
+
